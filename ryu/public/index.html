@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Netlab: Port Statistics</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.bundle.min.js" charset="utf-8"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.4/lodash.min.js" charset="utf-8"></script>
+
+        <style>
+            .switch-container {
+                white-space: nowrap;
+                overflow-x: scroll;
+                overflow-y: hidden;
+            }
+
+            .port-container {
+                display: inline-block;
+            }
+
+            .switch-container::after {
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="middleboxForm">
+            Source MAC Address: <input type="text" name="mac" placeholder="02:00:00:XX:YY:ZZ"> at switch <select id="dpid_select" name="switch"></select> <select name="action"><option value="add">Add</option><option value="remove">Remove</option></select> <input type="submit" value="Submit">
+        </form>
+
+        <div id="graphs"></div>
+
+        <script src="app.js" charset="utf-8"></script>
+    </body>
+</html>
